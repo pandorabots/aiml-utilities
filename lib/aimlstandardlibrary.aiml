@@ -419,6 +419,49 @@ XXLENGTH * * XS <set>number</set>
 <template><srai>XXLENGTH <star index="2" /> XS <srai>XADD <star index="3" /> XS 1</srai></srai>
 </template>
 </category>
+  
+<!-- COUNT CHARACTERS INCLUDING SPACES -->
+<category>
+<pattern>
+XLENGTHSPACES
+</pattern>
+<template>0
+</template>
+</category>
+
+<category>
+<pattern>
+XLENGTHSPACES *
+</pattern>
+<template>
+<think><set name="stringtocheck"></set></think>
+<srai>XXLENGTHSPACES <star/></srai>
+</template>
+</category>
+
+<category>
+<pattern>
+XXLENGTHSPACES * *
+</pattern>
+<template>
+<think>
+<set name="stringtocheck"><get name="stringtocheck"/><star/>~</set>
+</think>
+<srai>XXLENGTHSPACES <star index="2"/></srai>
+</template>
+</category>
+
+<category>
+<pattern>
+XXLENGTHSPACES *
+</pattern>
+<template>
+<think>
+<set name="stringtocheck"><get name="stringtocheck"/><star/></set>
+</think>
+<srai>XLENGTH <get name="stringtocheck"/></srai>
+</template>
+</category>
 
 <!-- RANDOM NUMBER-->
 <category>
